@@ -1,9 +1,5 @@
 import React, { Component, ImageBackground, View, Text } from "react";
 import logo from "./logo.svg";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
-import Iframe from "react-iframe";
 import "./App.css";
 
 export default class App extends Component {
@@ -58,7 +54,7 @@ export default class App extends Component {
     return src;
   }
 
-  streamChat(item){
+  streamChat(item) {
     let src = "https://www.twitch.tv/embed/" + item.channel.name + "/chat"
     console.log(src)
     return src;
@@ -96,27 +92,27 @@ export default class App extends Component {
           </div>
         </header>
 
-        <div className="App-header">
-          <GridList cellHeight={200} spacing={10} cols={5} className="grid">
-            {this.state.streamList.streams.map(item => (
-              <GridListTile key={item}>
-                <img
-                  src={item.preview.large}
-                  onClick={() => this.openStream(item)}
-                  title={item.channel.display_name}
-                />
-
-                <GridListTileBar
-                  title={item.channel.display_name}
-                  subtitle={
-                    <span>
-                      is streaming {item.game} for {item.viewers} viewers!
+        <div className="streamListContainer">
+          {this.state.streamList.streams.map(item => (
+            <div key={item} className="gridContainer">
+              <img
+                className="tile"
+                src={item.preview.large}
+                onClick={() => this.openStream(item)}
+                title={item.channel.display_name}
+              >
+                
+              </img>
+              <div class="streamDescription">
+                  <span className="streamTitle">{item.channel.display_name} </span>
+                  <span>
+                    streaming {item.game} for {item.viewers} viewers!
                     </span>
-                  }
-                />
-              </GridListTile>
-            ))}
-          </GridList>
+                </div>
+
+
+            </div>
+          ))}
         </div>
       </div>
     );

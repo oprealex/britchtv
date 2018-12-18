@@ -13,8 +13,23 @@
   overflow: hidden;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 200;
   align-self: center;
+}
+.tile {
+  width: 15rem;
+  min-width: 15rem;
+}
+.streamDescription {
+  width: 15rem;
+  font-size: 12px;
+  color: #282c34;
+  font-size-adjust: inherit;
+  justify-content: center;
+  align-items: center;
+}
+
+.streamTitle {
+  font-weight: bold;
 }
 
 .popUp {
@@ -29,14 +44,17 @@
 }
 
 .gridContainer {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: aliceblue;
+  box-shadow: 7px 7px 9px 0 rgba(2, 15, 22, 0.12); 
+  margin: 5px;
+  max-height: 10rem;
+  border-radius: 5px;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 10px;
+  cursor: pointer;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -45,6 +63,7 @@
 
 .embeddedStream {
   /* animation: App-logo-spin infinite 20s linear; */
+  align-self: center;
   display: flex;
   width: fit-content;
   height: fit-content;
@@ -52,11 +71,26 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #7ca1eb;
+  /* min-height: 100vh;
+  min-width: 100vh; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.streamListContainer {
+  background-color: #7ca1eb;
+  /* min-height: 100vh;
+  min-width: 100vh; */
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  flex-wrap: wrap;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
