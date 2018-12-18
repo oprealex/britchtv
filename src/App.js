@@ -74,7 +74,6 @@ export default class App extends Component {
           <div className="embeddedStream">
             <iframe
               className="currentStream"
-              // style={{borderColor:'black', borderWidth: , borderRadius: 30}}
               src={this.streamSource(this.state.selectedStream)}
               display="flex"
               height="720"
