@@ -58,20 +58,38 @@
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
- height: 100px;
+  height: 100px;
 }
 
 .embeddedStream {
-  /* animation: App-logo-spin infinite 20s linear; */
   align-self: center;
   display: flex;
+  z-index: 2;
   width: fit-content;
   height: fit-content;
-  /* min-height: 40vmin; */
+  -webkit-box-shadow: 0 0 0 7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 0 0 7px rgba(0,0,0,0.75);
+  box-shadow: 0 0 0 10px rgb(0, 0, 0);
+  pointer-events: none;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.currentStream {
+  -webkit-box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
+}
+
+.currentStreamChat {
+  -webkit-box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
 }
 
 .App-header {
-  background-color: #7ca1eb;
+  background-color: #bfd3fa;
   /* min-height: 100vh;
   min-width: 100vh; */
   display: flex;
@@ -84,7 +102,7 @@
 }
 
 .streamListContainer {
-  background-color: #7ca1eb;
+  background-color: #bfd3fa;
   /* min-height: 100vh;
   min-width: 100vh; */
   display: flex;

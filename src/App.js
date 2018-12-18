@@ -55,7 +55,7 @@ export default class App extends Component {
   }
 
   streamChat(item) {
-    let src = "https://www.twitch.tv/embed/" + item.channel.name + "/chat"
+    let src = "https://www.twitch.tv/embed/" + item.channel.name + "/chat?darkpopout"
     console.log(src)
     return src;
   }
@@ -73,6 +73,7 @@ export default class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <div className="embeddedStream">
             <iframe
+              className="currentStream"
               src={this.streamSource(this.state.selectedStream)}
               display="flex"
               height="720"
@@ -82,6 +83,7 @@ export default class App extends Component {
               allowfullscreen="true"
             />
             <iframe
+              className="currentStreamChat"
               frameborder="0"
               scrolling="no"
               id="chat_embed"
