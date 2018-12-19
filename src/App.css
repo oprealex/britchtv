@@ -62,18 +62,14 @@
 }
 
 .embeddedStream {
-  align-self: center;
-  display: flex;
-  z-index: 2;
-  width: fit-content;
-  height: fit-content;
-  overflow: hidden;
-  -webkit-box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+    align-self: center;
+    display: flex;
+    z-index: 2;
+    height: 81.7vh;
+    width: 90%;
+    overflow: hidden;
+    box-shadow: 10px 10px 61px 6px rgba(0,0,0,0.75);
+    border-radius: 20px;
 }
 
 .currentStream {

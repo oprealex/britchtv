@@ -22,8 +22,8 @@ export default class App extends Component {
     };
   }
 
-  async componentDidMount() {
-    await fetch("https://api.twitch.tv/kraken/streams", {
+  async getStreamList() {
+    await fetch("https://api.twitch.tv/kraken/streams?limit=100", {
       method: "GET",
       headers: {
         "Client-ID": "8v16du2ag2ae8159yal4d0454hdt88"
@@ -39,6 +39,10 @@ export default class App extends Component {
         console.log(error);
       });
     await this.setState({ selectedStream: this.state.streamList.streams[0] });
+  }
+
+  async componentDidMount() {
+    this.getStreamList()
   }
 
   async openStream(item) {
@@ -76,21 +80,20 @@ export default class App extends Component {
               className="currentStream"
               src={this.streamSource(this.state.selectedStream)}
               display="flex"
-              height="720"
-              width="1280"
+              height={'100%'}
+              width={'100%'}
               frameborder="0"
               scrolling="no"
               allowfullscreen="true"
             />
             <iframe
-            
               className="currentStreamChat"
               frameborder="0"
               scrolling="no"
               id="chat_embed"
               src={this.streamChat(this.state.selectedStream)}
-              height="720"
-              width="350"
+              height={'100%'}
+              width={'20%'}
             />
           </div>
         </header>
@@ -104,16 +107,14 @@ export default class App extends Component {
                 onClick={() => this.openStream(item)}
                 title={item.channel.display_name}
               >
-                
+
               </img>
               <div class="streamDescription">
-                  <span className="streamTitle">{item.channel.display_name} </span>
-                  <span>
-                    streaming {item.game} for {item.viewers} viewers!
+                <span className="streamTitle">{item.channel.display_name} </span>
+                <span>
+                  streaming {item.game} for {item.viewers} viewers!
                     </span>
-                </div>
-
-
+              </div>
             </div>
           ))}
         </div>
